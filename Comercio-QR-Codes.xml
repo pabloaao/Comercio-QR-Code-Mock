@@ -133,7 +133,7 @@ switch( xMock ) {
         "_msgId": "{{ randomString() }}",
         "_version": "0.0.4",
         "_rqDateTime": "2020-02-10T09:30Z",
-        "_clientId": "8303713-1",
+        "_clientId": "{{ randomString(5) }}",
         "_transactionId": "{{ randomString() }}"
     },
     "data": {
