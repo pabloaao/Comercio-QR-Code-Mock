@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="40bf3195-8d1d-4729-ae8b-21afb32555d2" activeEnvironment="Default" name="Comercio QR Payment" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="b569e66a-e595-4c4c-b43b-aa6cdc23b94a" wadlVersion="http://wadl.dev.java.net/2009/02" name="CommerceQRPayment" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://api.example.com</con:endpoint></con:endpoints><con:resource name="ObtenerDetalle" path="/commerce/qr-payments" id="12aa9bfd-d50d-4a24-89ac-9324441dfb2e"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-Client-Id</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-Mock</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="ObtenerDetalle" id="826a1031-b164-49df-907a-8f68d31001ad" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 400 422 404</con:status><con:params/><con:element xmlns:qr="https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments">qr:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request" id="20f352bd-99ca-4db7-ae4f-73e26885ba1a" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.apic.dev1.tbk.cl/transbank/sandbox</con:endpoint><con:request/><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value="200"/>
+  <con:entry key="id" value="12"/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="ConfirmarTransaccion" path="/commerce/qr-payments/confirm" id="649d8a2b-ec13-4fc7-9429-b5675f43ab1b"><con:settings/><con:parameters><con:parameter><con:name>X-Client-Id</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-Mock</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="ConfirmarTransaccion" id="1b8f9ac1-b772-4751-a9d2-9d669545706a" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 400 422 404</con:status><con:params/><con:element xmlns:qr="https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments">qr:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:qr="https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments">qr:Response</con:element></con:representation><con:request name="Request" id="31eaf170-ab89-49dc-ac3f-ab142d962c4d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://api.example.com</con:endpoint><con:request>{
+    "meta": {
+        "_rqDateTime": "2020-02-10T09:30Z"
+    },
+    "data": {
+        "id": "12345",
+        "type": "qrPayment"
+    }
+}</con:request><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-Client-Id" value="9e3aba0f3af4e738b9ef7043ad4f67bb" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="CancelarPago" path="/commerce/qr-payments/cancel" id="5d33ef78-0f5a-42f9-a163-0162d3b416e0"><con:settings/><con:parameters><con:parameter><con:name>X-Client-Id</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-Mock</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="CancelarPago" id="04bcbd41-3085-47a7-b4f4-7d64d3579547" method="DELETE"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400 422</con:status><con:params/><con:element xmlns:qr="https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments">qr:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="Request" id="aff1e03c-cf3b-4eaf-95bf-68b89b6d4c77" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="9e3aba0f3af4e738b9ef7043ad4f67bb"/>
+  <con:entry key="id" value="123"/>
+</con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="c020691d-1f02-4e1e-b5b6-93106eb3c267" name="CommerceQRPayment TestSuit"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3e550d4d-036d-470a-bde8-ef9f93956224" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ObtenerDetalle TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="ObtenerDetalle-200 Request" id="9599a434-e3e3-4c36-adeb-85ec6f7ac213"><con:settings/><con:config service="CommerceQRPayment" methodName="ObtenerDetalle" resourcePath="/commerce/qr-payments" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ObtenerDetalle-200 Request" id="2b683de1-ee0a-44f9-bcc7-a6abdd56fb73" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value="200"/>
+  <con:entry key="id" value="12356"/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ObtenerDetalle-401 Request" id="e3d235d7-dc9f-4e6d-85cc-abb4c0238242"><con:settings/><con:config service="CommerceQRPayment" methodName="ObtenerDetalle" resourcePath="/commerce/qr-payments" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ObtenerDetalle-401 Request" id="6c7d12ae-08cc-4e02-86c2-b77a84288537" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request/><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value="401"/>
+  <con:entry key="id" value=""/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ObtenerDetalle-422 Request" id="d564cf62-57eb-476a-b0e3-731221b6c7eb"><con:settings/><con:config service="CommerceQRPayment" methodName="ObtenerDetalle" resourcePath="/commerce/qr-payments" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ObtenerDetalle-422 Request" id="0478e24f-e7a2-48b4-a214-ab6d02577ae4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request/><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value="422"/>
+  <con:entry key="id" value="12345@"/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ObtenerDetalle-503 Request" id="24a17dca-5b31-4f92-9e19-478d27b770c6"><con:settings/><con:config service="CommerceQRPayment" methodName="ObtenerDetalle" resourcePath="/commerce/qr-payments" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ObtenerDetalle-503 Request" id="070dce94-ba7c-4fed-8759-398c93e9c7c8" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value="503"/>
+  <con:entry key="id" value="1235"/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f672076f-2bad-450f-9c35-148464898ff7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConfirmarTransaccion TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="ConfirmarTransaccion-204 Request" id="b40dd5f9-d7a3-4fae-bb62-253c404d5680"><con:settings/><con:config service="CommerceQRPayment" methodName="ConfirmarTransaccion" resourcePath="/commerce/qr-payments/confirm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ConfirmarTransaccion-201 Request" id="7d1b7982-097a-497d-a7d1-4d3c9650eaef" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request>{
+    "meta": {
+        "_rqDateTime": "2020-02-10T09:30Z"
+    },
+    "data": {
+        "id": "123456789023454310",
+        "type": "qrPayment"
+    }
+}</con:request><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value=""/>
+</con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ConfirmarTransaccion-401 Request" id="ffc54ac5-70ed-49cc-8972-30f122eab3af"><con:settings/><con:config service="CommerceQRPayment" methodName="ConfirmarTransaccion" resourcePath="/commerce/qr-payments/confirm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ConfirmarTransaccion-401 Request" id="7d1b7982-097a-497d-a7d1-4d3c9650eaef" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request>{
+    "meta": {
+        "_rqDateTime": "2020-02-10T09:30Z"
+    },
+    "data": {
+        "id": "123456789023454310",
+        "type": "qrPayment"
+    }
+}</con:request><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-Mock" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ConfirmarTransaccion-422 Request" id="46644d91-0b4d-4be5-a2c3-c11225995901"><con:settings/><con:config service="CommerceQRPayment" methodName="ConfirmarTransaccion" resourcePath="/commerce/qr-payments/confirm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ConfirmarTransaccion-422 Request" id="7d1b7982-097a-497d-a7d1-4d3c9650eaef" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request>{
+    "meta": {
+        "_rqDateTime": "2020-02-10T09:30Z"
+    },
+    "data": {
+        "id": "",
+        "type": "qrPayment"
+    }
+}</con:request><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value=""/>
+</con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ConfirmarTransaccion-503 Request" id="514db809-ad95-4c31-b427-0f4f2b9ffd8c"><con:settings/><con:config service="CommerceQRPayment" methodName="ConfirmarTransaccion" resourcePath="/commerce/qr-payments/confirm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ConfirmarTransaccion-503 Request" id="7d1b7982-097a-497d-a7d1-4d3c9650eaef" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://api.apic.dev1.tbk.cl</con:endpoint><con:request>{
+    "meta": {
+        "_rqDateTime": "2020-02-10T09:30Z"
+    },
+    "data": {
+        "id": "",
+        "type": "qrPayment"
+    }
+}</con:request><con:originalUri>https://api.apic.dev1.tbk.cl/transbank/sandbox/commerce/qr-payments</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-Client-Id" value="${#Project#clientId}"/>
+  <con:entry key="X-Mock" value=""/>
+</con:parameters><con:parameterOrder><con:entry>X-Client-Id</con:entry><con:entry>X-Mock</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3d7604ab-9974-406d-b634-6f2c06010d32" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CancelarPago TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="CancelarPago-201 Request" id="a486bd7d-0919-40e7-8a7f-bc092c52949b"><con:settings/><con:config service="CommerceQRPayment" methodName="CancelarPago" resourcePath="/commerce/qr-payments/cancel" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CancelarPago-201 Request" id="15fd30e7-43fd-4939-a823-8faa0d943337" mediaType="application/json" postQueryString="false"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CancelarPago-401 Request" id="1a3c76b7-0adc-4da2-b935-81147f6484eb"><con:settings/><con:config service="CommerceQRPayment" methodName="CancelarPago" resourcePath="/commerce/qr-payments/cancel" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CancelarPago-401 Request" id="91d943f6-242c-4f59-bd73-013fbc6596a8" mediaType="application/json" postQueryString="false"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CancelarPago-422 Request" id="fc625d4d-3a45-4505-975c-e1232f448d08"><con:settings/><con:config service="CommerceQRPayment" methodName="CancelarPago" resourcePath="/commerce/qr-payments/cancel" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CancelarPago-422 Request" id="4e1c9cd4-7358-43bc-91eb-184cca9661ad" mediaType="application/json" postQueryString="false"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CancelarPago-503 Request" id="415ce1c0-d8d8-4536-947c-eb800f15c476"><con:settings/><con:config service="CommerceQRPayment" methodName="CancelarPago" resourcePath="/commerce/qr-payments/cancel" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CancelarPago-503 Request" id="a323805e-6d18-4853-9efd-ea6d28c8c5bc" mediaType="application/json" postQueryString="false"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://api.example.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:restMockService id="d25fe427-c4d6-4320-818b-dcf937dec3b8" port="8080" path="/" host="DESKTOP-4K677HU" name="REST MockService ObtenerDetalle"><con:settings/><con:properties/><con:restMockAction name="Obtener Detalle" method="GET" resourcePath="/commerce/qr-payments" id="95b67728-2063-4400-96d7-5159c440d9f5"><con:settings/><con:defaultResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ObtenerDetalle-200 Request Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>
+def xMock = mockRequest.request.getHeader("X-Mock")
+
+if(!xMock){
+	return "ObtenerDetalle-200 Response"
+}
+
+switch( xMock ) {
+	case "200":
+		return "ObtenerDetalle-200 Response"
+	break
+	case "401":
+		return "ObtenerDetalle-401 Response"
+	break
+	case "422":
+		return "ObtenerDetalle-422 Response"
+	break
+	case "503":
+		return "ObtenerDetalle-503 Response"
+	break
+	default:
+		return "ObtenerDetalle-503 Response"
+}</con:dispatchPath><con:response name="ObtenerDetalle-200 Response" id="d13654a4-72d2-4eaf-a259-bcbbf5b1c8f2" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "{{ randomString() }}",
+        "_version": "0.0.6",
+        "_rqDateTime": "{{ now(dd/MM/yyyy HH:mm:ss) }}",
+        "_clientId": "3104213-2",
+        "_transactionId": "{{ randomString() }}"
+    },
+    "data": {
+        "id": "625171232",
+        "type": "qrPayment",
+        "attributes": {
+            "date": "2{{ now(dd/MM/yyyy HH:mm:ss) }}",
+            "statusTransaccion": "APROBADO",
+            "status": "00",
+            "detailTransaccion": "",
+            "isReceipt": true,
+            "wallet": "{{ randomString() }}",
+            "commerceId": "14578878",
+            "commerceName": "Comercio {{ randomString(5) }}",
+            "rut": "95.185.234-6",
+            "address": "Marín {{ randomInt(0, 999) }}, Santiago",
+            "authorizationCode": "adf3d877eefb8d69ec1fgee213ff8b6bb5d2cd54729fb2f0",
+            "operationNumber": "439294",
+            "brand": "VISA",
+            "cardType": "CREDIT",
+            "amount": 25500,
+            "tipAmount": 2550,
+            "totalAmount": 28050,
+            "changeAmount": 37.81,
+            "donationsAmount": 80.94,
+            "currency": "CLP",
+            "installment": 3,
+            "installmentType": "3CSI",
+            "interestRate": 13,
+            "installmentAmountDetails": [
+                55,
+                53,
+                50
+            ],
+            "terminalId": "88897487",
+            "uniqueNumber": "625171232",
+            "voucher": "{{ randomString(10) }}",
+            "prepaidBalance": 65.33
+        }
+    }
+}</con:responseContent></con:response><con:response name="ObtenerDetalle-401 Response" id="aa9eea7c-146c-4307-88e5-3b84a8d05c61" httpResponseStatus="401" mediaType="application/json"><con:settings/><con:responseContent>{
+    "httpCode": "401",
+    "httpMessage": "Unauthorized",
+    "moreInformation": "Invalid client id or secret."
+}</con:responseContent></con:response><con:response name="ObtenerDetalle-422 Response" id="7c23df8c-26bc-4cc6-ace7-04187e0425f5" httpResponseStatus="422" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "{{ randomString() }}",
+        "_version": "0.0.6",
+        "_rqDateTime": "{{ now(dd/MM/yyyy HH:mm:ss) }}",
+        "_clientId": "3104213-2",
+        "_transactionId": "{{ randomString() }}"
+    },
+    "errors": [
+        {
+            "status": "422",
+            "title": "id invalido",
+            "detail": "el parametro id debe ser alfanumérico",
+            "source": {
+                "pointer": "id"
+            }
+        }
+    ]
+}</con:responseContent></con:response><con:response name="ObtenerDetalle-503 Response" id="e21d31dd-86c0-46f4-9cb3-52ad35a8c3d6" httpResponseStatus="503" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "{{ randomString() }}",
+        "_version": "0.0.6",
+        "_rqDateTime": "{{ now(dd/MM/yyyy HH:mm:ss) }}",
+        "_clientId": "3104213-2",
+        "_transactionId": "{{ randomString() }}"
+    },
+    "errors": [
+        {
+            "status": "503",
+            "title": "Servicio interno no disponible",
+            "detail": "El servicio interno no se encuentra en funcionamiento."
+        }
+    ]
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="Confirmar Transaccion" method="POST" resourcePath="/commerce/qr-payments/confirm" id="0ffa740b-66f4-49eb-9e5e-4033de01956f"><con:settings/><con:defaultResponse>ConfirmarTransaccion-204 Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>
+def xMock = mockRequest.request.getHeader("X-Mock")
+
+if(!xMock){
+	return "ConfirmarTransaccion-204 Response"
+}
+
+switch( xMock ) {
+	case "204":
+		return "ConfirmarTransaccion-204 Response"
+	break
+	case "401":
+		return "ConfirmarTransaccion-401 Response"
+	break
+	case "422":
+		return "ConfirmarTransaccion-422 Response"
+	break
+	case "503":
+		return "ConfirmarTransaccion-503 Response"
+	break
+	default:
+		return "ConfirmarTransaccion-503 Response"
+}</con:dispatchPath><con:response name="ConfirmarTransaccion-204 Response" id="0ba81312-d43b-48fd-aac2-ff01fc588a19" httpResponseStatus="204"><con:settings/><con:responseContent>{ }</con:responseContent></con:response><con:response name="ConfirmarTransaccion-401 Response" id="f41c334c-ddb0-4edb-8ecc-ae3c85c65e1b" httpResponseStatus="401" mediaType="application/json"><con:settings/><con:responseContent>{
+	"httpCode": "401",
+	"httpMessage": "Unauthorized",
+	"moreInformation": "Invalid client id or secret."
+}</con:responseContent></con:response><con:response name="ConfirmarTransaccion-422 Response" id="769fd274-476c-4ad3-b822-15610a013b55" httpResponseStatus="422" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "ba04faee-a914-4c3f-8463-8475bbbd2eb5",
+        "_version": "0.0.6",
+        "_rqDateTime": "2018-02-10T09:30Z",
+        "_clientId": "1927462-1",
+        "_transactionId": "ffd75960-da41-4dc5-b68e-58d11130fd4e"
+    },
+    "errors": [
+        {
+            "status": "422",
+            "title": "Identificador invalido",
+            "detail": "Identificador de la transacción invalido",
+            "source": {
+                "pointer": "id"
+            }
+        }
+    ]
+}</con:responseContent></con:response><con:response name="ConfirmarTransaccion-503 Response" id="50a7c3ec-1e96-4fe1-85ff-0ac0adbc6d80" httpResponseStatus="503" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "dec6318f-c387-47a7-888d-6b7b48ea2914",
+        "_version": "0.0.6",
+        "_rqDateTime": "2018-02-10T09:30Z",
+        "_clientId": "203030331-2",
+        "_transactionId": "d469ada0-996e-4345-98f1-5c4ee161a1ab"
+    },
+    "errors": [
+        {
+            "status": "503",
+            "title": "Servicio interno no disponible",
+            "detail": "El servicio interno no se encuentra en funcionamiento."
+        }
+    ]
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="Cancelar Pago" method="DELETE" resourcePath="/commerce/qr-payments/cancel" id="dcc92b54-ae30-4f6c-b098-2d07d1fa4682"><con:settings/><con:defaultResponse>CancelarPago-204 Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>
+def xMock = mockRequest.request.getHeader("X-Mock")
+
+if(!xMock){
+	return "CancelarPago-204 Response"
+}
+
+switch( xMock ) {
+	case "204":
+		return "CancelarPago-204 Response"
+	break
+	case "401":
+		return "CancelarPago-401 Response"
+	break
+	case "422":
+		return "CancelarPago-422 Response"
+	break
+	case "503":
+		return "CancelarPago-503 Response"
+	break
+	default:
+		return "CancelarPago-503 Response"
+}</con:dispatchPath><con:response name="CancelarPago-204 Response" id="3a330665-8f77-423c-8fd2-6eab78fd39ed" httpResponseStatus="204" mediaType="application/json"><con:settings/><con:responseContent>{ }</con:responseContent></con:response><con:response name="CancelarPago-401 Response" id="4f150ed4-cfa9-455a-ad77-fccf776972ea" httpResponseStatus="401" mediaType="application/json"><con:settings/><con:responseContent>{
+    "httpCode": "401",
+    "httpMessage": "Unauthorized",
+    "moreInformation": "Client certificates for mutual TLS in the API request doesn't match the registered certificate."
+}</con:responseContent></con:response><con:response name="CancelarPago-422 Response" id="a5fb50cb-a1b7-494b-b11e-97fecbfff6b0" httpResponseStatus="422" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "0d5d87bd-1f67-46ed-888f-d5ef08fc324f",
+        "_version": "0.0.6",
+        "_rqDateTime": "2018-02-10T09:30Z",
+        "_clientId": "932016301-2",
+        "_transactionId": "4f54da6a-67e8-4007-9b4d-0cc1ea5c3fbc"
+    },
+    "errors": [
+        {
+            "status": "422",
+            "title": "identificación invalida",
+            "detail": "Identiifcador de la transacción invalido",
+            "source": {
+                "pointer": "id"
+            }
+        }
+    ]
+}</con:responseContent></con:response><con:response name="CancelarPago-503 Response" id="4970fbb8-f675-4c82-a6da-037a3c044303" httpResponseStatus="503" mediaType="application/json"><con:settings/><con:responseContent>{
+    "meta": {
+        "_msgId": "dec6318f-c387-47a7-888d-6b7b48ea2914",
+        "_version": "0.0.6",
+        "_rqDateTime": "2018-02-10T09:30Z",
+        "_clientId": "203030331-2",
+        "_transactionId": "d469ada0-996e-4345-98f1-5c4ee161a1ab"
+    },
+    "errors": [
+        {
+            "status": "503",
+            "title": "Servicio interno no disponible",
+            "detail": "El servicio interno no se encuentra en funcionamiento."
+        }
+    ]
+}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties><con:property><con:name>clientId</con:name><con:value>9e3aba0f3af4e738b9ef7043ad4f67bb</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
