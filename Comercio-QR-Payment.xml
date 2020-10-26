@@ -223,7 +223,7 @@ switch( xMock ) {
             "detail": "El servicio interno no se encuentra en funcionamiento."
         }
     ]
-}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="Cancelar Pago" method="DELETE" resourcePath="/commerce/qr-payments/cancel" id="dcc92b54-ae30-4f6c-b098-2d07d1fa4682"><con:settings/><con:defaultResponse>CancelarPago-204 Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/commerce/qr-payments/cancel" method="DELETE" resourcePath="/commerce/qr-payments/cancel" id="dcc92b54-ae30-4f6c-b098-2d07d1fa4682"><con:settings/><con:defaultResponse>CancelarPago-204 Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>
 def xMock = mockRequest.request.getHeader("X-Mock")
 
 if(!xMock){
