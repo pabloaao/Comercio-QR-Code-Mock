@@ -1,0 +1,1 @@
+# Comercio-QR-Code-Mock
