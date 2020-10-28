@@ -131,9 +131,9 @@ switch( xMock ) {
 </con:dispatchPath><con:response name="GenerarCodigoQR-201 Response" id="32ab1f2f-fc53-4c56-bfce-3cdfa0150be4" httpResponseStatus="201" mediaType="application/json"><con:settings/><con:responseContent>{
     "meta": {
         "_msgId": "{{ randomString() }}",
-        "_version": "0.0.4",
+        "_version": "0.0.6",
         "_rqDateTime": "2020-02-10T09:30Z",
-        "_clientId": "{{ randomString(5) }}",
+        "_clientId": "8303713-1",
         "_transactionId": "{{ randomString() }}"
     },
     "data": {
@@ -147,7 +147,7 @@ switch( xMock ) {
             "codeEmv": "00020101021226320012cl.transbank011259703366441252040000530315254062850.05502015802CL5918OrangePPeopleShop6008Santiago62110107125678280950015cl.transbank.qr0124123e4567e89b1a45642400000244UHJ1ZWJhIGRlIGNvZGlmaWNhY2nDs24gQkFTRTY0IQ==63044BF4",
             "simpleCode": "01",
             "uniqueNumber": "80e5bb833Fj",
-            "commerceId": "{{ randomString(0, 20) }}"
+            "commerceId": "{{ randomString(8) }}"
         }
     }
 }</con:responseContent></con:response><con:response name="GenerarCodigoQR-401 Response" id="aa2026c3-96c0-4442-a78c-53b4f8c37875" httpResponseStatus="401" mediaType="application/json"><con:settings/><con:responseContent>{
@@ -157,7 +157,7 @@ switch( xMock ) {
 }</con:responseContent></con:response><con:response name="GenerarCodigoQR-422 Response" id="e915519d-f842-4b20-945c-99cb2bb96658" httpResponseStatus="422" mediaType="application/json"><con:settings/><con:responseContent>{
     "meta": {
         "_msgId": "{{ randomString() }}",
-        "_version": "1.0.3",
+        "_version": "0.0.6",
         "_rqDateTime": "{{ now(dd/MM/yyyy HH:mm:ss) }}",
         "_clientId": "8303713-1",
         "_transactionId": "{{ randomString() }}"
@@ -175,7 +175,7 @@ switch( xMock ) {
 }</con:responseContent></con:response><con:response name="GenerarCodigoQR-503 Response" id="1d90f52b-c23b-4d95-9b33-9b954802263f" httpResponseStatus="503" mediaType="application/json"><con:settings/><con:responseContent>{
     "meta": {
         "_msgId": "{{ randomString() }}",
-        "_version": "1.0.3",
+        "_version": "0.0.6",
         "_rqDateTime": "{{ now(dd/MM/yyyy HH:mm:ss) }}",
         "_clientId": "8303713-1",
         "_transactionId": "{{ randomString() }}"
